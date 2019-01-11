@@ -51,25 +51,16 @@ if (isset($_POST['submit'])) {
 			<label for="name"><?php echo _('Record Name (e.g. “@”, “www”, etc.)'); ?></label>
 			<input type="text" name="name" id="name" class="form-control">
 		</div>
-		<div class="form-group">
+		<div class="form-group" style="display:none">
 			<label for="type"><?php echo _('Record Type'); ?></label>
 			<select name="type" id="type" class="form-control">
-				<option value="A">A</option>
-				<option value="AAAA">AAAA</option>
 				<option value="CNAME">CNAME</option>
-				<option value="MX">MX</option>
-				<option value="SPF">SPF</option>
-				<option value="TXT">TXT</option>
-				<option value="NS">NS</option>
-				<option value="PTR">PTR</option>
-				<option value="CAA">CAA</option>
-				<option value="SRV">SRV</option>
 			</select>
 		</div>
 
 		<div class="form-group" id="dns-content">
 			<label for="doc-ta-1"><?php echo _('Record Content'); ?></label>
-			<textarea name="content" rows="5" id="doc-ta-1" class="form-control"></textarea>
+			<input type="text" name="content" id="doc-ta-1" class="form-control">
 		</div>
 
 		<div class="form-group" id="dns-mx-priority">
@@ -124,7 +115,7 @@ if (isset($_POST['submit'])) {
 			</div>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group" style="display:none">
 			<label for="ttl">TTL</label>
 			<select name="ttl" id="ttl" class="form-control">
 				<?php
@@ -134,11 +125,10 @@ foreach ($ttl_translate as $_ttl => $_ttl_name) {
 ?>
 			</select>
 		</div>
-		<div class="form-group">
+		<div class="form-group" style="display:none">
 			<label for="proxied">CDN</label>
 			<select name="proxied" id="proxied" class="form-control">
 				<option value="true"><?php echo _('On'); ?></option>
-				<option value="false"><?php echo _('Off'); ?></option>
 			</select>
 		</div>
 		<p><button type="submit" name="submit" class="btn btn-primary"><?php echo _('Submit'); ?></button></p>

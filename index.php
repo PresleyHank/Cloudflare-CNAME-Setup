@@ -72,8 +72,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'analytics') {
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
 }
 ?>
-	<meta name="description" content="TlOxygen Cloudflare Partners">
-	<meta name="keywords" content="TlOxygen, Cloudflare">
+	<meta name="description" content="CodecCloud Cloudflare Partners">
+	<meta name="keywords" content="CodecCloud, Cloudflare">
 	<title><?php
 if (isset($_GET['action'])) {
 	if ($_GET['action'] != 'login') {
@@ -90,7 +90,7 @@ if (isset($_GET['action'])) {
 	echo _('Console') . ' | ';
 }
 
-echo _('Cloudflare CNAME/IP Advanced Setup') . ' &#8211; ' . $page_title;
+echo _('CodecCloud Cloudflare 管理面板') . ' &#8211; ' . $page_title;
 ?></title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="Cache-Control" content="no-siteapp"/>

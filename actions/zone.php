@@ -76,7 +76,6 @@ if (isset($_GET['enable']) && !$dnsproxyied[$_GET['enable']]) {
 		<a class="dropdown-item" href="#dns"><?php echo _('DNS Management'); ?></a>
 		<a class="dropdown-item" href="#cname"><?php echo _('CNAME Setup'); ?></a>
 		<a class="dropdown-item" href="#ip"><?php echo _('IP Setup'); ?></a>
-		<a class="dropdown-item" href="#ns"><?php echo _('NS Setup'); ?></a>
 		<div class="dropdown-divider"></div>
 		<a class="dropdown-item" href="https://dash.cloudflare.com/" target="_blank"><?php echo _('More Settings'); ?></a>
 	</div>
@@ -85,10 +84,8 @@ if (isset($_GET['enable']) && !$dnsproxyied[$_GET['enable']]) {
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th scope="col" class="d-none d-md-table-cell"><?php echo _('Record Type'); ?></th>
 			<th scope="col"><?php echo _('Host Name'); ?></th>
 			<th scope="col" class="d-none d-md-table-cell"><?php echo _('Content'); ?></th>
-			<th scope="col" class="d-none d-md-table-cell"><?php echo _('TTL'); ?></th>
 			<th scope="col" class="d-none d-md-table-cell"><?php echo _('Operation'); ?></th>
 		</tr>
 	</thead>
@@ -123,7 +120,6 @@ foreach ($dnsresult as $record) {
 		}
 		$no_record_yet = false;
 		echo '<tr>
-			<td class="d-none d-md-table-cell"><code>' . $record->type . '</code></td>
 			<td scope="col">
 				<div class="d-block d-md-none float-right">' . $proxiable . '</div>
 				<div class="d-block d-md-none">' . $record->type . ' ' . _('record') . '</div>
@@ -141,8 +137,7 @@ foreach ($dnsresult as $record) {
 				<div class="d-block d-md-none">' . _('TTL') . ' ' . $ttl . '</div>
 			</td>
 			<td class="d-none d-md-table-cell">' . $priority . '<code>' . htmlspecialchars($record->content) . '</code></td>
-			<td class="d-none d-md-table-cell">' . $ttl . '</td>
-			<td class="d-none d-md-table-cell" style="width: 200px;">' . $proxiable . ' |
+			<td class="d-none d-md-table-cell" style="width: 200px;">
 				<div class="btn-group" role="group">
 					<a class="btn btn-dark btn-sm" href="?action=edit_record&domain=' . $zone_name . '&recordid=' . $record->id . '&zoneid=' . $zoneID . '">' . _('Edit') . '</a>
 					<a class="btn btn-danger btn-sm" href="?action=delete_record&domain=' . $zone_name . '&delete=' . $record->id . '&zoneid=' . $zoneID . '" onclick="return confirm(\'' . _('Are you sure to delete') . ' ' . htmlspecialchars($record->name) . '?\')">' . _('Delete') . '</a>
@@ -244,32 +239,6 @@ if ((isset($resp_a->answer[0]->address) && isset($resp_a->answer[1]->address)) |
 	<li><code><?php echo $resp_aaaa->answer[1]->address; ?></code></li>
 </ul>
 <?php }}?>
-
-<?php if (isset($resp->answer[0]->nsdname) && isset($resp->answer[1]->nsdname)) {?>
-<h3 class="mt-5 mb-3" id="ns"><?php echo _('NS Setup'); ?></h3>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th scope="col"><?php echo _('Host Name'); ?></th>
-			<th class="d-none d-md-table-cell">NS</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code><?php echo $zone_name; ?></code>
-				<div class="d-block d-md-none"><?php echo _('points to') . ' <code>' . $resp->answer[0]->nsdname . '</code>' ?></div>
-			</td>
-			<td class="d-none d-md-table-cell"><code><?php echo $resp->answer[0]->nsdname; ?></code></td>
-		</tr>
-		<tr>
-			<td><code><?php echo $zone_name; ?></code>
-				<div class="d-block d-md-none"><?php echo _('points to') . ' <code>' . $resp->answer[1]->nsdname . '</code>' ?></div>
-			</td>
-			<td class="d-none d-md-table-cell"><code><?php echo $resp->answer[1]->nsdname; ?></code></td>
-		</tr>
-	</tbody>
-</table>
-<?php }?>
 
 <hr>
 <h3 class="mt-5 mb-3"><a href="https://dash.cloudflare.com/" target="_blank"><?php echo _('More Settings'); ?></a></h3>

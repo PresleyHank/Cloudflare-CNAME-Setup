@@ -9,7 +9,6 @@ if (!isset($_GET['page'])) {
 	$_GET['page'] = 1;
 }
 ?>
-<a href="?action=add" class="btn btn-primary float-sm-right mb-3 d-block"><?php echo _('Add Domain'); ?></a>
 <h3 class="d-none d-sm-block"><?php echo _('Home'); ?></h3>
 
 <table class="table table-striped">
@@ -78,18 +77,9 @@ HTML;
 HTML;
 	if (property_exists($zone, 'name_servers')) {
 		echo '<a href="https://dash.cloudflare.com/" target="_blank" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="top" title="' . _('This domain only supports NS setup. And you should manage DNS records on Cloudflare.com.') . '">' . _('Manage DNS') . '</a>';
-		echo <<<HTML
-<a href="?action=analytics&amp;domain={$zone->name}&amp;zoneid={$zone->id}" class="btn btn-dark btn-sm">{$_translate_analytics}</a>
-HTML;
 	} else {
 		echo <<<HTML
 <a href="?action=zone&amp;domain={$zone->name}&amp;zoneid={$zone->id}" class="btn btn-secondary btn-sm">{$_translate_manage_dns}</a>
-HTML;
-		echo <<<HTML
-<a href="?action=analytics&amp;domain={$zone->name}&amp;zoneid={$zone->id}" class="btn btn-dark btn-sm">{$_translate_analytics}</a>
-HTML;
-		echo <<<HTML
-<a href="?action=security&amp;domain={$zone->name}&amp;zoneid={$zone->id}" class="btn btn-secondary btn-sm">{$_translate_security}</a>
 HTML;
 
 	}

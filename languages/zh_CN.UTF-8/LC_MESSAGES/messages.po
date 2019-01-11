@@ -379,7 +379,7 @@ msgstr "主机名"
 
 #: actions/zone.php:90
 msgid "Content"
-msgstr "内容"
+msgstr "回源域名"
 
 #: actions/zone.php:91 actions/zone.php:141
 msgid "TTL"
