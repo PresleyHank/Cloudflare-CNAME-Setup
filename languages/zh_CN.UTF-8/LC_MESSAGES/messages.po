@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-12-13 19:21+0800\n"
-"PO-Revision-Date: 2018-12-13 19:23+0800\n"
+"PO-Revision-Date: 2019-01-11 21:59+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -66,11 +66,11 @@ msgstr "返回"
 
 #: actions/add_record.php:49
 msgid "Add DNS Record"
-msgstr "添加 DNS 记录"
+msgstr "添加回源记录"
 
 #: actions/add_record.php:51 actions/edit_record.php:48
 msgid "Record Name (e.g. “@”, “www”, etc.)"
-msgstr "记录名 (例 “@”, “www”, etc.)"
+msgstr "主机记录 (域名前缀)"
 
 #: actions/add_record.php:55 actions/edit_record.php:52 actions/zone.php:88
 msgid "Record Type"
@@ -78,7 +78,7 @@ msgstr "记录类型"
 
 #: actions/add_record.php:71 actions/edit_record.php:107
 msgid "Record Content"
-msgstr "记录内容"
+msgstr "回源地址"
 
 #: actions/add_record.php:76 actions/add_record.php:110
 #: actions/edit_record.php:90 actions/edit_record.php:112
@@ -197,7 +197,7 @@ msgstr "编辑 DNS 记录"
 
 #: actions/edit_record.php:86
 msgid "Name"
-msgstr "主机名"
+msgstr "主机记录"
 
 #: actions/list_zones.php:12 languages/translates.php:30
 msgid "Add Domain"
@@ -221,7 +221,7 @@ msgstr "管理"
 
 #: actions/list_zones.php:36 actions/list_zones.php:80
 msgid "Manage DNS"
-msgstr "管理 DNS"
+msgstr "域名管理"
 
 #: actions/list_zones.php:37 languages/translates.php:25
 msgid "Security"
@@ -247,7 +247,7 @@ msgstr "页码"
 
 #: actions/login.php:10
 msgid "Cloudflare CNAME/IP/NS Setup"
-msgstr "Cloudflare CNAME/IP/NS 接入"
+msgstr "CodecCloud Cloudflare 管理面板"
 
 #: actions/login.php:12
 msgid "Please sign in"
@@ -271,11 +271,11 @@ msgstr "登录"
 
 #: actions/login.php:23
 msgid "Use your existing account or create a new account here."
-msgstr "在这里登录你已有的账号或者注册新账号."
+msgstr "在这里登录你的 Cloudflare 账号"
 
 #: actions/login.php:24
 msgid "We will not store any of your Cloudflare data"
-msgstr "我们不会存储你的任何 Cloudflare 数据"
+msgstr "我们不会存储你的任何 Cloudflare 数据及账号密码"
 
 #: actions/security.php:21
 msgid "SSL Verify"
@@ -355,11 +355,11 @@ msgstr "目录"
 
 #: actions/zone.php:76 actions/zone.php:84
 msgid "DNS Management"
-msgstr "DNS 管理"
+msgstr "回源记录管理"
 
 #: actions/zone.php:77 actions/zone.php:178
 msgid "CNAME Setup"
-msgstr "CNAME 接入"
+msgstr "CNAME 接入地址"
 
 #: actions/zone.php:78 actions/zone.php:233
 msgid "IP Setup"
@@ -379,7 +379,7 @@ msgstr "主机名"
 
 #: actions/zone.php:90
 msgid "Content"
-msgstr "回源域名"
+msgstr "回源地址"
 
 #: actions/zone.php:91 actions/zone.php:141
 msgid "TTL"
@@ -447,7 +447,7 @@ msgstr "面板"
 
 #: index.php:93
 msgid "Cloudflare CNAME/IP Advanced Setup"
-msgstr "Cloudflare CNAME/IP 高级接入"
+msgstr "CodecCloud Cloudflare 管理面板"
 
 #: index.php:132 languages/translates.php:24
 msgid "Logout"
@@ -459,7 +459,7 @@ msgstr "Cloudflare 支持"
 
 #: index.php:186
 msgid "View on GitHub"
-msgstr "在 GitHub 上查看"
+msgstr "源代码"
 
 #: languages/translates.php:3
 msgid "Automatic"
