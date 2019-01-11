@@ -48,7 +48,7 @@ if (isset($msg)) {echo $msg;}
 			<label for="name"><?php echo _('Record Name (e.g. “@”, “www”, etc.)'); ?></label>
 			<input type="text" name="name" id="name" value="<?php echo htmlspecialchars($dns_details->name); ?>" class="form-control">
 		</div>
-		<div class="form-group">
+		<div class="form-group" style="display:none">
 			<label for="type"><?php echo _('Record Type'); ?></label>
 			<select name="type" id="type" disabled="disabled" class="form-control">
 				<option value="<?php echo $dns_details->type; ?>"><?php echo $dns_details->type; ?></option>
@@ -105,7 +105,7 @@ if (isset($msg)) {echo $msg;}
 		<?php } else {?>
 		<div class="form-group">
 			<label for="doc-ta-1"><?php echo _('Record Content'); ?></label>
-			<textarea name="content" rows="5" id="doc-ta-1" class="form-control"><?php echo htmlspecialchars($dns_details->content); ?></textarea>
+			<input type="text" name="content" id="doc-ta-1" value="<?php echo htmlspecialchars($dns_details->content); ?>" class="form-control">
 		</div>
 			<?php if ($dns_details->type == 'MX' || $dns_details->type == 'SRV') {?>
 				<div class="form-group">
@@ -115,7 +115,7 @@ if (isset($msg)) {echo $msg;}
 			<?php }?>
 		<?php }?>
 
-		<div class="form-group">
+		<div class="form-group" style="display:none">
 			<label for="ttl">TTL</label>
 			<select name="ttl" id="ttl" class="form-control">
 				<?php
@@ -126,7 +126,7 @@ foreach ($ttl_translate as $_ttl => $_ttl_name) {
 			</select>
 		</div>
 		<?php if ($dns_details->proxiable) {?>
-		<div class="form-group">
+		<div class="form-group" style="display:none">
 			<label for="proxied">CDN</label>
 			<select name="proxied" id="proxied" class="form-control">
 				<option value="true" <?php if ($dns_details->proxied) {echo 'selected="selected"';}?>><?php echo _('On'); ?></option>
